@@ -4,35 +4,43 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<meta name="color-scheme" content="light">
 <title>Instalar o CortaLive Pro</title>
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'none'; form-action 'none'">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
-  :root { --fundo: #0b0a12; --cartao: #15131f; --borda: #2a2638; --texto: #f2eff8; --mudo: #a49db8; --amarelo: #FFE500; --magenta: #FF2E88; }
+  :root { --papel: #f3efe6; --tinta: #17141d; --tinta-2: #4a4553; --linha: #cfc7b6; --marca: #ffe500; --rosa: #b3125c; }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--fundo); color: var(--texto); font: 17px/1.6 "Segoe UI", system-ui, -apple-system, Arial, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 18px 64px; }
-  .topo { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-  .topo img { width: 44px; height: 44px; }
-  h1 { font-size: 30px; line-height: 1.15; margin: 6px 0 8px; }
-  h1 span { color: var(--amarelo); }
-  p.sub { color: var(--mudo); margin: 0 0 26px; }
-  .passo { background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px; padding: 18px 20px; margin: 14px 0; }
-  .passo h2 { margin: 0 0 6px; font-size: 19px; }
-  .passo h2 b { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--amarelo); color: #111; margin-right: 8px; font-size: 16px; }
-  .passo p, .passo li { color: #d8d3e6; }
-  .botao { display: inline-block; background: linear-gradient(90deg, var(--magenta), #ff9f43); color: #111; font-weight: 800; text-decoration: none; padding: 14px 22px; border-radius: 999px; margin: 8px 0 2px; }
-  .botao.leve { background: transparent; color: var(--texto); border: 1px solid var(--borda); font-weight: 600; }
-  code { background: #221f30; border: 1px solid var(--borda); border-radius: 6px; padding: 1px 6px; }
-  .aviso { border-color: #5a2440; background: #1d1018; }
-  footer { color: var(--mudo); font-size: 14px; margin-top: 32px; }
-  a { color: var(--amarelo); }
+  body { margin: 0; background: var(--papel); color: var(--tinta); font: 18px/1.62 "Source Serif 4", Georgia, serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  .topo { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; font: 800 1.1rem/1 "Bricolage Grotesque", "Segoe UI", sans-serif; text-decoration: none; color: inherit; }
+  .topo img { width: 34px; height: 34px; }
+  .topo span span { color: var(--rosa); }
+  h1, h2 { font-family: "Bricolage Grotesque", "Segoe UI", sans-serif; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
+  h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 12px; }
+  mark { color: inherit; background: linear-gradient(176deg, transparent 52%, var(--marca) 52%, var(--marca) 90%, transparent 90%); }
+  p.sub { color: var(--tinta-2); margin: 0 0 30px; }
+  .passo { border-top: 2px solid var(--tinta); padding: 22px 0 10px; }
+  .passo h2 { margin: 0 0 8px; font-size: 1.4rem; display: flex; align-items: center; gap: 12px; }
+  .passo h2 b { display: inline-grid; place-items: center; width: 32px; height: 32px; background: var(--marca); font: 700 .95rem/1 "JetBrains Mono", Consolas, monospace; flex: none; }
+  .passo p, .passo li { color: var(--tinta-2); }
+  .passo b { color: var(--tinta); }
+  .botao { display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; background: var(--marca); color: var(--tinta); border: 2px solid var(--tinta); box-shadow: 4px 4px 0 var(--tinta); font: 700 1rem/1 "Bricolage Grotesque", "Segoe UI", sans-serif; text-decoration: none; margin: 8px 0 14px; }
+  .botao:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--tinta); }
+  .botao.leve { background: transparent; }
+  .aviso { border-bottom: 2px solid var(--tinta); }
+  footer { color: var(--tinta-2); font-size: .92rem; margin-top: 32px; }
+  a { color: inherit; text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; box-shadow: 0 0 0 7px var(--marca); }
 </style>
 </head>
 <body>
 <main>
-  <div class="topo"><img src="assets/logo.svg" alt=""><strong>CortaLive Pro</strong></div>
-  <h1>Obrigado pela compra! <span>Vamos instalar.</span></h1>
+  <a class="topo" href="./"><img src="assets/logo.svg" alt="" width="34" height="34"><span>CortaLive <span>Pro</span></span></a>
+  <h1>Obrigado pela compra! <mark>Vamos instalar.</mark></h1>
   <p class="sub">São 3 passos e leva poucos minutos. Guarde o e-mail da compra: ele tem o código que você vai usar na ativação.</p>
 
   <section class="passo">
