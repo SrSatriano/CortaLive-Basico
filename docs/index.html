@@ -69,8 +69,9 @@
   img, video { max-width: 100%; height: auto; display: block; }
   a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   a:hover { text-decoration-thickness: 2px; }
-  h1, h2, h3 { font-family: var(--f-titulo); font-weight: 800; line-height: 1.02; letter-spacing: -.03em; margin: 0 0 .45em; }
+  h1, h2, h3 { text-wrap: balance; font-family: var(--f-titulo); font-weight: 800; line-height: 1.02; letter-spacing: -.03em; margin: 0 0 .45em; }
   h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); max-width: 18ch; }
+  .nw { white-space: nowrap; }
   h3 { font-size: 1.35rem; letter-spacing: -.015em; line-height: 1.15; }
   p { margin: 0 0 1em; }
   strong { font-weight: 600; }
@@ -419,8 +420,8 @@
             <p class="exemplo"><span class="mono">um exemplo do que sai</span>Um corte de 1:35 em 4K, com legenda palavra a palavra e “Créditos: canal (twitch)” na legenda do post.</p>
           </div>
           <figure class="tela">
-            <a class="ampliar" href="assets/telas/config-cortes-1600.webp" title="Abrir a tela em tamanho maior"><img src="assets/telas/config-cortes-1600.webp" srcset="assets/telas/config-cortes-800.webp 800w, assets/telas/config-cortes-1600.webp 1600w" sizes="(min-width: 960px) 700px, 100vw" width="1600" height="678" loading="lazy" alt="Configurações do CortaLive Pro: nota mínima da IA 6,5, duração mínima de 72 segundos, alvo de 95, máxima de 150 e resolução do vídeo final 2160x3840."></a>
-            <figcaption class="mono"><b>Configurações</b><span>alvo de 95 s (1:35), vídeo final 2160x3840</span></figcaption>
+            <a class="ampliar" href="assets/telas/config-cortes-1600.webp" title="Abrir a tela em tamanho maior"><img src="assets/telas/config-cortes-1600.webp" srcset="assets/telas/config-cortes-800.webp 800w, assets/telas/config-cortes-1600.webp 1600w" sizes="(min-width: 960px) 700px, 100vw" width="1600" height="678" loading="lazy" alt="Configurações do CortaLive Pro: nota mínima da IA 6,5, duração mínima de 72 segundos, alvo de 95, máxima de 150 e resolução do vídeo final 2160×3840."></a>
+            <figcaption class="mono"><b>Configurações</b><span>alvo de 95 s (1:35), vídeo final 2160×3840</span></figcaption>
           </figure>
         </li>
 
@@ -455,7 +456,7 @@
   <section class="secao requisitos" id="requisitos" aria-labelledby="t-req">
     <div class="caixa">
       <span class="rotulo">Antes de comprar</span>
-      <h2 id="t-req">O que você precisa ter (e o que não precisa)</h2>
+      <h2 id="t-req">O que você precisa ter (e&nbsp;o que não precisa)</h2>
       <p>Prefiro que você saiba agora do que descobrir depois de pagar.</p>
       <div class="colunas">
         <div>
@@ -497,7 +498,7 @@
             <tr><th scope="row">Corta vídeo ou live já gravada</th><td>sim</td><td>sim</td></tr>
             <tr><th scope="row">IA escolhe os momentos e escreve título e legenda</th><td>sim</td><td>sim</td></tr>
             <tr><th scope="row">Legenda palavra a palavra e crédito ao criador</th><td>sim</td><td>sim</td></tr>
-            <tr><th scope="row">Resolução do corte</th><td>1080x1920</td><td>até 4K</td></tr>
+            <tr><th scope="row">Resolução do corte</th><td>1080×1920</td><td>até 4K</td></tr>
             <tr><th scope="row">Grava lives sozinho (Twitch, YouTube, Kick)</th><td class="nao">não</td><td>sim</td></tr>
             <tr><th scope="row">Usa o chat para achar os picos</th><td class="nao">não</td><td>sim</td></tr>
             <tr><th scope="row">Publica no TikTok, Shorts e Reels</th><td class="nao">não</td><td>sim</td></tr>
@@ -538,11 +539,11 @@
       <div>
         <ul class="inclui">
           <li><strong>Licença vitalícia</strong>Para até 2 PCs. Sem mensalidade.</li>
-          <li><strong>Ativação automática</strong>Você digita o e-mail da compra e o código que chega no e-mail da Cakto. O programa ativa sozinho.</li>
+          <li><strong>Ativação automática</strong>Você digita o <span class="nw">e-mail</span> da compra e o código que chega no <span class="nw">e-mail</span> da Cakto. O programa ativa sozinho.</li>
           <li><strong>Reembolso em 7 dias</strong>Pelo Código de Defesa do Consumidor. É só pedir pela Cakto.</li>
         </ul>
         <ol class="passos-compra" aria-label="Depois da compra">
-          <li><span>Compre pelo botão e guarde o e-mail de confirmação.</span></li>
+          <li><span>Compre pelo botão e guarde o <span class="nw">e-mail</span> de confirmação.</span></li>
           <li><span>Siga o <a data-link="instalar" href="instalar-pro.html">guia de instalação e ativação</a>: baixar, instalar, ativar.</span></li>
           <li><span>No painel, siga os primeiros passos: escolher a IA (se quiser), os canais e conectar as suas contas.</span></li>
         </ol>
@@ -577,7 +578,7 @@
         </details>
         <details>
           <summary>Em quantos computadores posso usar?</summary>
-          <div><p>A licença é vitalícia e vale para até 2 PCs. A ativação pede o e-mail e o código da compra.</p></div>
+          <div><p>A licença é vitalícia e vale para até 2 PCs. A ativação pede o <span class="nw">e-mail</span> e o código da compra.</p></div>
         </details>
         <details>
           <summary>E se eu não gostar?</summary>
@@ -585,7 +586,7 @@
         </details>
         <details data-cupom>
           <summary>Abri o link e o cupom não apareceu.</summary>
-          <div><p>O link não aplica o cupom sozinho. No checkout, clique em “Aplicar cupom” e digite <span class="cupom-inline" data-cupom-codigo>CORTA150</span>. Vale até <span data-cupom-ate>29/11 às 23:59</span> de 2026, horário de Brasília.</p></div>
+          <div><p>O link não aplica o cupom sozinho. No checkout, clique em “Aplicar cupom” e digite <span class="cupom-inline" data-cupom-codigo>CORTA150</span>. Vale até <span data-cupom-ate>29/11 às 23:59</span> (horário de Brasília).</p></div>
         </details>
         <details>
           <summary>Roda no Mac ou no Linux?</summary>
