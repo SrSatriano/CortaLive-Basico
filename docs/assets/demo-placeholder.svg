@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-label="Um vídeo horizontal de live vira um corte vertical com legenda">
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0d12"/>
+      <stop offset="1" stop-color="#171b26"/>
+    </linearGradient>
+    <linearGradient id="acento" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff5470"/>
+      <stop offset="1" stop-color="#ffb347"/>
+    </linearGradient>
+    <linearGradient id="jogo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a3350"/>
+      <stop offset="1" stop-color="#3b2a4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="420" rx="24" fill="url(#fundo)"/>
+  <!-- vídeo horizontal -->
+  <g transform="translate(60 95)">
+    <rect width="400" height="225" rx="12" fill="url(#jogo)" stroke="#2c3245"/>
+    <path d="M0 170 L90 120 L170 160 L260 95 L400 150 L400 225 L0 225 Z" fill="#1f2638"/>
+    <rect x="300" y="14" width="86" height="64" rx="8" fill="#12151d" stroke="url(#acento)" stroke-width="2"/>
+    <circle cx="343" cy="40" r="13" fill="#ffd2a8"/>
+    <rect x="325" y="56" width="36" height="16" rx="8" fill="#ff5470"/>
+    <rect x="14" y="14" width="64" height="22" rx="11" fill="#ff5470"/>
+    <text x="46" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#fff">AO VIVO</text>
+    <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9aa3b8">live gravada (horizontal)</text>
+  </g>
+  <!-- seta -->
+  <g transform="translate(495 207)">
+    <path d="M0 0 H90" stroke="url(#acento)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M78 -14 L98 0 L78 14" fill="none" stroke="#ffb347" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="48" y="-22" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#c9cfdc">IA + corte</text>
+  </g>
+  <!-- celular vertical -->
+  <g transform="translate(640 30)">
+    <rect width="200" height="360" rx="28" fill="#12151d" stroke="#2c3245" stroke-width="3"/>
+    <rect x="12" y="14" width="176" height="332" rx="18" fill="url(#jogo)"/>
+    <rect x="12" y="14" width="176" height="120" rx="18" fill="#1a1f2d"/>
+    <circle cx="100" cy="66" r="30" fill="#ffd2a8"/>
+    <rect x="62" y="98" width="76" height="30" rx="15" fill="#ff5470"/>
+    <rect x="12" y="132" width="176" height="4" fill="#ffb347"/>
+    <path d="M12 290 L70 240 L120 270 L188 220 L188 346 L12 346 Z" fill="#1f2638"/>
+    <text x="100" y="182" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="20" font-weight="900" fill="#fff">QUE <tspan fill="#ffe500">JOGADA</tspan></text>
+    <text x="100" y="206" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="20" font-weight="900" fill="#fff">INSANA</text>
+    <text x="100" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9aa3b8">corte 1080x1920</text>
+  </g>
+</svg>

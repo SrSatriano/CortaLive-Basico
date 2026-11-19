@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Instalar o CortaLive Pro</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<style>
+  :root { --fundo: #0b0a12; --cartao: #15131f; --borda: #2a2638; --texto: #f2eff8; --mudo: #a49db8; --amarelo: #FFE500; --magenta: #FF2E88; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fundo); color: var(--texto); font: 17px/1.6 "Segoe UI", system-ui, -apple-system, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 18px 64px; }
+  .topo { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .topo img { width: 44px; height: 44px; }
+  h1 { font-size: 30px; line-height: 1.15; margin: 6px 0 8px; }
+  h1 span { color: var(--amarelo); }
+  p.sub { color: var(--mudo); margin: 0 0 26px; }
+  .passo { background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px; padding: 18px 20px; margin: 14px 0; }
+  .passo h2 { margin: 0 0 6px; font-size: 19px; }
+  .passo h2 b { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--amarelo); color: #111; margin-right: 8px; font-size: 16px; }
+  .passo p, .passo li { color: #d8d3e6; }
+  .botao { display: inline-block; background: linear-gradient(90deg, var(--magenta), #ff9f43); color: #111; font-weight: 800; text-decoration: none; padding: 14px 22px; border-radius: 999px; margin: 8px 0 2px; }
+  .botao.leve { background: transparent; color: var(--texto); border: 1px solid var(--borda); font-weight: 600; }
+  code { background: #221f30; border: 1px solid var(--borda); border-radius: 6px; padding: 1px 6px; }
+  .aviso { border-color: #5a2440; background: #1d1018; }
+  footer { color: var(--mudo); font-size: 14px; margin-top: 32px; }
+  a { color: var(--amarelo); }
+</style>
+</head>
+<body>
+<main>
+  <div class="topo"><img src="assets/logo.svg" alt=""><strong>CortaLive Pro</strong></div>
+  <h1>Obrigado pela compra! <span>Vamos instalar.</span></h1>
+  <p class="sub">São 3 passos e leva poucos minutos. Guarde o e-mail da compra: ele tem o código que você vai usar na ativação.</p>
+
+  <section class="passo">
+    <h2><b>1</b>Baixe o instalador</h2>
+    <p>Windows 10 ou 11 (64 bits). O arquivo tem cerca de 150 MB.</p>
+    <a class="botao" href="https://github.com/SrSatriano/CortaLive-Pro/releases/latest/download/CortaLive-Pro-Setup.exe">Baixar o CortaLive Pro</a>
+  </section>
+
+  <section class="passo">
+    <h2><b>2</b>Instale</h2>
+    <ul>
+      <li>Abra o arquivo baixado. Se o Windows mostrar <b>"O Windows protegeu o computador"</b>, clique em <b>Mais informações → Executar assim mesmo</b> (acontece com programas novos).</li>
+      <li>Deixe marcadas as opções <b>Ligar junto com o Windows</b> e <b>Instalar o FFmpeg</b>.</li>
+      <li>No final, deixe marcado <b>Abrir o CortaLive Pro agora</b>.</li>
+    </ul>
+  </section>
+
+  <section class="passo">
+    <h2><b>3</b>Ative</h2>
+    <p>Na tela <b>Ativação</b>, digite o <b>e-mail usado na compra</b> e o <b>código da compra</b> (está no e-mail de confirmação da Cakto) e clique em <b>Ativar agora</b>. A licença vale para até 2 computadores.</p>
+    <p>Depois siga o checklist <b>Primeiros passos</b> do painel: escolher a IA, os canais e conectar suas contas.</p>
+  </section>
+
+  <section class="passo aviso">
+    <h2>Precisa de ajuda?</h2>
+    <p>O manual completo está dentro do programa (aba <b>Ajuda</b>). Para suporte, responda ao e-mail da compra.</p>
+    <a class="botao leve" href="./">Voltar para a página do CortaLive</a>
+  </section>
+
+  <footer>Ao instalar, você concorda com os Termos de Uso que aparecem no instalador. Você é responsável pelo conteúdo que corta e publica: dê crédito aos criadores e respeite as regras de cada plataforma.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Dependências do CortaLive Básico (Python 3.11+). Instale com:  python -m pip install -r requirements.txt
+faster-whisper>=1.0.3      # transcrição local (legenda palavra a palavra)
+opencv-python>=4.8         # detecta a webcam do streamer (layout com câmera em cima)
+numpy>=1.26
+requests>=2.31             # chamadas às IAs
+python-dotenv>=1.0         # lê o arquivo .env
+google-auth>=2.20          # só para quem usa o Vertex AI (Google Cloud)

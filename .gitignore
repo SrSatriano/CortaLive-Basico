@@ -1,0 +1,45 @@
+# segredos: nunca vão para o GitHub
+.env
+.env.*
+!.env.exemplo
+*.pem
+*.key
+*.p12
+*.pfx
+contas-de-servico/
+*credentials*.json
+*service-account*.json
+
+# vídeos e cortes gerados
+saida/
+*.mp4
+*.mkv
+*.ts
+*.mov
+*.webm
+*.flv
+*.m4v
+*.jpg
+!docs/**/*.jpg
+
+# pasta de trabalho do programa (cache, progresso, temporários)
+dados/
+
+# Python e ferramentas
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# sistema
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,46 @@
+[project]
+name = "cortalive-basico"
+version = "1.0.0"
+description = "Transforma vídeos e lives gravadas em cortes verticais 1080x1920 com legenda, escolhidos por IA."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "SrSatriano" }]
+dependencies = [
+    "faster-whisper>=1.0.3",
+    "opencv-python>=4.8",
+    "numpy>=1.26",
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+vertex = ["google-auth>=2.20"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+cortalive = "cortalive.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["cortalive"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E741"]
+
+[tool.ruff.lint.per-file-ignores]
+# prompt da IA e cabeçalho do .ass são textos longos de propósito
+"cortalive/curador.py" = ["E501"]
+"cortalive/legendas.py" = ["E501"]
