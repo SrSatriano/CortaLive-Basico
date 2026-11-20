@@ -3,83 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<meta name="color-scheme" content="light">
 <title>Instalar o CortaLive Pro</title>
-<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'none'; form-action 'none'">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<style>
-  :root { --papel: #f3efe6; --tinta: #17141d; --tinta-2: #4a4553; --linha: #cfc7b6; --marca: #ffe500; --rosa: #b3125c; }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--papel); color: var(--tinta); font: 18px/1.62 "Source Serif 4", Georgia, serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-  .topo { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; font: 800 1.1rem/1 "Bricolage Grotesque", "Segoe UI", sans-serif; text-decoration: none; color: inherit; }
-  .topo img { width: 34px; height: 34px; }
-  .topo span span { color: var(--rosa); }
-  h1, h2 { font-family: "Bricolage Grotesque", "Segoe UI", sans-serif; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
-  h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 12px; }
-  mark { color: inherit; background: linear-gradient(176deg, transparent 52%, var(--marca) 52%, var(--marca) 90%, transparent 90%); }
-  p.sub { color: var(--tinta-2); margin: 0 0 30px; }
-  .passo { border-top: 2px solid var(--tinta); padding: 22px 0 10px; }
-  .passo h2 { margin: 0 0 8px; font-size: 1.4rem; display: flex; align-items: center; gap: 12px; }
-  .passo h2 b { display: inline-grid; place-items: center; width: 32px; height: 32px; background: var(--marca); font: 700 .95rem/1 "JetBrains Mono", Consolas, monospace; flex: none; }
-  .passo p, .passo li { color: var(--tinta-2); }
-  .passo b { color: var(--tinta); }
-  .botao { display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; background: var(--marca); color: var(--tinta); border: 2px solid var(--tinta); box-shadow: 4px 4px 0 var(--tinta); font: 700 1rem/1 "Bricolage Grotesque", "Segoe UI", sans-serif; text-decoration: none; margin: 8px 0 14px; }
-  .botao:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--tinta); }
-  .botao.leve { background: transparent; }
-  .aviso { border-bottom: 2px solid var(--tinta); }
-  .gratis { border-left: 4px solid var(--marca); background: #fffdf7; padding: 12px 16px; margin: 6px 0 16px; }
-  .gratis p { margin: 0; }
-  .nw { white-space: nowrap; }
-  footer { color: var(--tinta-2); font-size: .92rem; margin-top: 32px; }
-  a { color: inherit; text-underline-offset: 3px; }
-  :focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; box-shadow: 0 0 0 7px var(--marca); }
-</style>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://lhnnexus.com/pt/cortalive/instalar">
+<meta http-equiv="refresh" content="0; url=https://lhnnexus.com/pt/cortalive/instalar">
+<script>location.replace("https://lhnnexus.com/pt/cortalive/instalar" + location.hash);</script>
+<style>body{font:16px/1.5 system-ui,sans-serif;background:#120f19;color:#f3efe6;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px;text-align:center}a{color:#ffe500}</style>
 </head>
 <body>
-<main>
-  <a class="topo" href="./"><img src="assets/logo.svg" alt="" width="34" height="34"><span>CortaLive <span>Pro</span></span></a>
-  <h1>Instalar o CortaLive. <mark>São 3 passos.</mark></h1>
-  <p class="sub">Comprou o Pro? Obrigado! Guarde o <span class="nw">e-mail</span> da compra: ele tem o código que você vai usar no passo 3. Ainda não comprou? Os passos 1 e 2 já bastam: o programa funciona no modo grátis.</p>
-
-  <section class="passo">
-    <h2><b>1</b>Baixe o instalador</h2>
-    <p>Windows 10 ou 11 (64 bits). O arquivo tem cerca de 150 MB e é o mesmo para o grátis e para o Pro.</p>
-    <a class="botao" href="https://github.com/SrSatriano/CortaLive-Pro/releases/latest/download/CortaLive-Pro-Setup.exe">Baixar o instalador</a>
-    <p>Prefere ver antes? <a href="https://youtu.be/xkJ_aKpcGFs" target="_blank" rel="noopener">Tutorial completo em vídeo (6 min) ↗</a></p>
-  </section>
-
-  <section class="passo">
-    <h2><b>2</b>Instale</h2>
-    <ul>
-      <li>Abra o arquivo baixado. Se o Windows mostrar <b>"O Windows protegeu o computador"</b>, clique em <b>Mais informações → Executar assim mesmo</b> (acontece com programas novos).</li>
-      <li>O instalador pergunta para quem instalar: <b>Para todos os usuários</b> (em Arquivos de Programas; o Windows pede permissão, e cada atualização também) ou <b>Só para mim</b> (sem pedir permissão). Os dois funcionam igual.</li>
-      <li>Deixe marcadas as opções <b>Ligar junto com o Windows</b>, <b>Instalar o FFmpeg</b> e <b>Instalar o Deno</b> (o YouTube exige o Deno para baixar vídeos e gravar lives).</li>
-      <li>No final, deixe marcado <b>Abrir o CortaLive Pro agora</b>.</li>
-    </ul>
-    <div class="gratis">
-      <p>Pronto: ele já funciona no <b>modo grátis</b>. Posta em 1 rede (você escolhe qual), acompanha até 2 canais, grava até 2 lives ao mesmo tempo e faz 3 cortes por dia, em até 1080×1920, com a marca <b>"feito com CortaLive"</b> no vídeo. A busca automática de lives por jogo é só do Pro.</p>
-    </div>
-    <p>Siga o checklist <b>Primeiros passos</b> do painel: escolher a IA (se quiser), os canais e conectar suas contas.</p>
-  </section>
-
-  <section class="passo">
-    <h2><b>3</b>Ative o Pro</h2>
-    <p>É este passo que tira os limites. Na tela <b>Ativação</b> do painel, digite o <b><span class="nw">e-mail</span> usado na compra</b> e o <b>código da compra</b> (está no <span class="nw">e-mail</span> de confirmação da Cakto) e clique em <b>Ativar agora</b>. Ele vira Pro na hora, sem reinstalar, e o que você já configurou continua lá. A licença vale para até 2 computadores.</p>
-    <p>Ainda não comprou? <a href="./#preco">Veja o preço do Pro</a>.</p>
-  </section>
-
-  <section class="passo aviso">
-    <h2>Precisa de ajuda?</h2>
-    <p>O manual completo está dentro do programa (aba <b>Ajuda</b>). Quando sair versão nova, o painel avisa e o botão <b>Atualizar agora</b> instala sozinho. Para suporte, responda ao <span class="nw">e-mail</span> da compra.</p>
-    <a class="botao leve" href="./">Voltar para a página do CortaLive</a>
-  </section>
-
-  <footer>Ao instalar, você concorda com os Termos de Uso que aparecem no instalador. Você é responsável pelo conteúdo que corta e publica: dê crédito aos criadores e respeite as regras de cada plataforma.</footer>
-</main>
+<p>O CortaLive mudou de endereço.<br><a href="https://lhnnexus.com/pt/cortalive/instalar">Ir para lhnnexus.com/pt/cortalive/instalar</a></p>
 </body>
 </html>
