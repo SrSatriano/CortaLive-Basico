@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CortaLive Pro — grava a live, corta e posta</title>
-<meta name="description" content="Programa para Windows que grava lives da Twitch, YouTube e Kick, acha os melhores momentos, corta em vertical com legenda e publica no TikTok, Shorts e Reels. R$ 297, pagamento único.">
+<meta name="description" content="Programa para Windows que grava lives da Twitch, YouTube e Kick, acha os melhores momentos, corta em vertical com legenda e publica no TikTok, Shorts e Reels. Dá para usar grátis, com limites. O Pro custa R$ 297, pagamento único.">
 <meta name="theme-color" content="#f3efe6">
 <meta name="color-scheme" content="light">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
@@ -24,7 +24,8 @@
   // =====================================================================
   const LINK_COMPRA = "https://pay.cakto.com.br/q8ckjw6_1345686";   // checkout da Cakto
   const LINK_INSTALAR = "https://srsatriano.github.io/CortaLive-Basico/instalar-pro.html";
-  const LINK_DOWNLOAD = "https://github.com/SrSatriano/CortaLive-Basico/releases/latest";
+  const LINK_INSTALADOR = "https://github.com/SrSatriano/CortaLive-Pro/releases/latest/download/CortaLive-Pro-Setup.exe"; // grátis e Pro
+  const LINK_DOWNLOAD = "https://github.com/SrSatriano/CortaLive-Basico/releases/latest";  // Básico (código aberto)
   const LINK_REPOSITORIO = "https://github.com/SrSatriano/CortaLive-Basico";
   const PRECO = "R$ 297";                       // preço cheio
   const PRECO_PARCELADO = "12x de R$ 30,68";    // parcelamento do preço cheio
@@ -105,6 +106,7 @@
   .botao:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--tinta); }
   .botao:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--tinta); }
   .botao--pequeno { min-height: 40px; padding: 0 16px; font-size: .92rem; box-shadow: 3px 3px 0 var(--tinta); }
+  .botao--leve { background: #fffdf7; }
   .escuro .botao, .escuro a.botao { color: var(--tinta); border-color: var(--tinta); box-shadow: 5px 5px 0 #f3efe6; }
   .escuro .botao:hover { box-shadow: 7px 7px 0 #f3efe6; }
 
@@ -126,9 +128,9 @@
   .marca img { width: 34px; height: 34px; }
   .marca span span { color: var(--rosa); }
   .menu { display: none; gap: 26px; font: 500 .95rem/1 var(--f-titulo); }
-  .menu a { text-decoration: none; }
+  .menu a { text-decoration: none; white-space: nowrap; }
   .menu a:hover { text-decoration: underline; }
-  @media (min-width: 900px) { .menu { display: flex; } }
+  @media (min-width: 1024px) { .menu { display: flex; } }
 
   /* topo da página */
   .abre { padding: 44px 0 72px; }
@@ -206,8 +208,10 @@
   .lista--sim li::before { content: "→"; }
   .lista--nao li::before { content: "×"; color: var(--rosa); }
 
-  /* básico x pro */
+  /* grátis x pro */
   .compara .caixa > p { max-width: 58ch; color: var(--tinta-2); }
+  .compara .acoes { margin-top: 32px; }
+  .compara .nota-baixar { margin-top: 18px; font-size: .98rem; }
   .tabela { margin-top: 36px; border: 2px solid var(--tinta); background: #fffdf7; overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 1rem; }
   th, td { padding: 13px 16px; text-align: left; border-bottom: 1px solid var(--linha); vertical-align: top; }
@@ -217,7 +221,7 @@
   td { font-family: var(--f-mono); font-size: .86rem; white-space: nowrap; }
   td.nao { color: #8a8392; }
   tbody tr:last-child > * { border-bottom: 0; }
-  @media (max-width: 560px) { th, td { padding: 11px 10px; } table { font-size: .9rem; } td { font-size: .78rem; } }
+  @media (max-width: 560px) { th, td { padding: 11px 10px; } table { font-size: .9rem; } td { font-size: .78rem; white-space: normal; } }
 
   /* preço */
   .escuro { background: var(--noite); color: #f3efe6; }
@@ -263,6 +267,15 @@
   .fim .caixa { display: grid; gap: 24px; align-items: center; }
   @media (min-width: 860px) { .fim .caixa { grid-template-columns: 1fr auto; } }
   .fim h2 { max-width: 20ch; margin: 0; font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+  .fim .acoes { margin-top: 0; }
+
+  /* para quem programa */
+  .dev { border-top: 2px solid var(--tinta); background: var(--papel-2); padding: 56px 0; }
+  .dev .caixa { display: grid; gap: 8px 48px; }
+  @media (min-width: 860px) { .dev .caixa { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: start; } }
+  .dev h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); max-width: 16ch; }
+  .dev p { color: var(--tinta-2); max-width: 60ch; }
+  .dev .links-dev { display: flex; flex-wrap: wrap; gap: 8px 24px; font: 600 1rem/1.4 var(--f-titulo); margin: 0; }
   .rodape { background: var(--tinta); color: #c7c0d3; padding: 40px 0 48px; font-size: .92rem; }
   .rodape .caixa { display: grid; gap: 14px; }
   .rodape nav { display: flex; flex-wrap: wrap; gap: 10px 22px; font: 500 .95rem/1.4 var(--f-titulo); }
@@ -301,6 +314,7 @@
       <a href="#por-que">Por que eu fiz</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#requisitos">O que precisa</a>
+      <a href="#gratis-pro">Grátis x Pro</a>
       <a href="#preco">Preço</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
@@ -327,7 +341,7 @@
 
         <div class="acoes">
           <a class="botao" data-link="compra" href="#preco">Comprar o CortaLive Pro</a>
-          <a class="link-gratis" data-link="download" href="https://github.com/SrSatriano/CortaLive-Basico/releases/latest" rel="noopener">ou baixe a versão grátis (Básico)</a>
+          <a class="link-gratis" data-link="instalador" href="https://github.com/SrSatriano/CortaLive-Pro/releases/latest/download/CortaLive-Pro-Setup.exe" rel="noopener">ou baixe grátis (com marca d'água)</a>
         </div>
       </div>
 
@@ -360,6 +374,7 @@
           <p>Eu tenho um canal de cortes de games, o Afiado Games. E cortar live na mão é assim: assistir horas de transmissão atrás de um minuto bom, cortar, legendar, pensar num título, postar em três redes. Um corte de cada vez.</p>
           <p>Então escrevi um programa pra fazer isso por mim. Ele acompanha as lives, grava, separa os trechos em que o áudio e o chat explodem, transcreve, corta e publica. Desde 18/11/2026 os cortes do Afiado Games saem sozinhos, do meu PC, pelo CortaLive Pro.</p>
           <p>Não tenho números pra te mostrar ainda: o sistema começou a postar lá agora. Mas ele está rodando de verdade, em público, e você pode conferir antes de pagar qualquer coisa. O programa que estou vendendo é esse mesmo.</p>
+          <p>E não precisa comprar para experimentar: o mesmo programa roda de graça, com limites. Se gostar, você ativa o Pro.</p>
           <p class="assinatura">— SrSatriano, dono do Afiado Games e quem escreveu o CortaLive</p>
         </div>
       </div>
@@ -392,7 +407,8 @@
           <div class="etapa-texto">
             <span class="num">01 / grava</span>
             <h3>Você cola o link do canal. Ele grava toda vez que o canal entra ao vivo.</h3>
-            <p>Aceita canais da Twitch, do YouTube e da Kick. Se quiser, ele também procura lives de um jogo específico. A gravação vai em blocos de 5 minutos, junto com o chat.</p>
+            <p>Aceita canais da Twitch, do YouTube e da Kick. No Pro, ele também pode procurar sozinho lives de um jogo específico. A gravação vai em blocos de 5 minutos, junto com o chat.</p>
+            <p><strong>Vídeo que já foi ao ar também vira corte.</strong> Cole o link de um vídeo do YouTube, da Twitch, da Kick ou do Vimeo (live antiga, podcast, entrevista, aula) ou escolha um arquivo do seu PC. Ele baixa, acha os melhores momentos e apaga o vídeo baixado no fim.</p>
           </div>
           <figure class="tela">
             <a class="ampliar" href="assets/telas/ao-vivo-1600.webp" title="Abrir a tela em tamanho maior"><img src="assets/telas/ao-vivo-1600.webp" srcset="assets/telas/ao-vivo-800.webp 800w, assets/telas/ao-vivo-1600.webp 1600w" sizes="(min-width: 960px) 700px, 100vw" width="1600" height="900" loading="lazy" alt="Tela Ao vivo do CortaLive Pro: duas lives sendo gravadas, uma da Twitch com 1h00 gravada em 12 blocos e uma do YouTube com 1h25 em 17 blocos, e o campo para adicionar um canal à lista fixa."></a>
@@ -416,7 +432,7 @@
           <div class="etapa-texto">
             <span class="num">03 / corta</span>
             <h3>Corta em vertical, com o rosto do streamer em cima.</h3>
-            <p>Legenda palavra a palavra, título e crédito ao criador, em até 4K. Duração e resolução você ajusta.</p>
+            <p>Legenda palavra a palavra, título e crédito ao criador, em até 4K. Duração e resolução você ajusta. Se tiver uma logo, ela vai num canto do vídeo, no tamanho e na transparência que você escolher.</p>
             <p class="exemplo"><span class="mono">um exemplo do que sai</span>Um corte de 1:35 em 4K, com legenda palavra a palavra e “Créditos: canal (twitch)” na legenda do post.</p>
           </div>
           <figure class="tela">
@@ -430,6 +446,7 @@
             <span class="num">04 / posta</span>
             <h3>Publica nos horários da sua grade.</h3>
             <p>Cada rede tem seus horários. No TikTok só vão cortes com mais de 1:10, por causa da monetização; no Shorts e no Reels, até 3 minutos. Precisa parar? Pausa tudo de uma vez ou só uma rede.</p>
+            <p>Você escolhe a <strong>nota mínima</strong> e até quantos dias a fila pode ir, para o que vai ao ar ser sempre recente. Com a fila cheia, um corte melhor toma a vaga do pior. No YouTube, ele espera a verificação de direitos autorais terminar antes de publicar. Se um envio travar, ele reinicia o navegador sozinho e tenta de novo.</p>
           </div>
           <figure class="tela">
             <a class="ampliar" href="assets/telas/agenda-1600.webp" title="Abrir a tela em tamanho maior"><img src="assets/telas/agenda-1600.webp" srcset="assets/telas/agenda-800.webp 800w, assets/telas/agenda-1600.webp 1600w" sizes="(min-width: 960px) 700px, 100vw" width="1600" height="1165" loading="lazy" alt="Tela Agenda: horários de TikTok, YouTube e Instagram com botão de pausa para cada rede, e a grade dos próximos 7 dias com posts publicados, agendados e na fila."></a>
@@ -441,7 +458,7 @@
           <div class="etapa-texto">
             <span class="num">05 / acompanha</span>
             <h3>E você só abre o painel pra ver como está.</h3>
-            <p>O que está gravando, quantos cortes saíram hoje, a fila e os próximos posts. Tem também métricas e uma aba de análise.</p>
+            <p>O que está gravando, quantos cortes saíram hoje, a fila e os próximos posts. Tem também métricas e uma aba de análise. Quando sai versão nova, aparece um aviso ali mesmo, com um botão para atualizar.</p>
           </div>
           <figure class="tela">
             <a class="ampliar" href="assets/telas/visao-geral-1600.webp" title="Abrir a tela em tamanho maior"><img src="assets/telas/visao-geral-1600.webp" srcset="assets/telas/visao-geral-800.webp 800w, assets/telas/visao-geral-1600.webp 1600w" sizes="(min-width: 960px) 700px, 100vw" width="1600" height="1075" loading="lazy" alt="Visão geral do painel: 2 lives gravando, 8 cortes hoje com nota média 8.8, 22 na fila, gráfico de cortes por dia e a lista dos próximos posts."></a>
@@ -482,33 +499,38 @@
     </div>
   </section>
 
-  <!-- =========================================================== básico x pro -->
-  <section class="secao compara" id="basico-pro" aria-labelledby="t-compara" style="padding-top:0">
+  <!-- =========================================================== grátis x pro -->
+  <section class="secao compara" id="gratis-pro" aria-labelledby="t-compara" style="padding-top:0">
     <div class="caixa">
-      <span class="rotulo">Básico x Pro</span>
-      <h2 id="t-compara">Tem uma versão grátis. Ela faz bem menos.</h2>
-      <p>O Básico é de código aberto e corta vídeos que você já gravou. O Pro faz o ciclo inteiro: grava, escolhe, corta e posta.</p>
+      <span class="rotulo">Grátis x Pro</span>
+      <h2 id="t-compara">Dá para começar sem pagar. Com limites.</h2>
+      <p>É o mesmo programa e o mesmo instalador. Sem licença, ele roda no modo grátis: grava, corta e posta, só que menos. Se comprar o Pro, você digita o <span class="nw">e-mail</span> e o código da compra na tela Ativação e os limites somem na hora. Não precisa reinstalar nem refazer nada.</p>
       <div class="tabela">
         <table>
-          <caption class="sr">Comparação entre o CortaLive Básico e o CortaLive Pro</caption>
+          <caption class="sr">O que muda entre o modo grátis e o CortaLive Pro</caption>
           <thead>
-            <tr><th scope="col">O que faz</th><th scope="col">Básico</th><th scope="col">Pro</th></tr>
+            <tr><th scope="col">O que muda</th><th scope="col">Grátis</th><th scope="col">Pro</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Corta vídeo ou live já gravada</th><td>sim</td><td>sim</td></tr>
-            <tr><th scope="row">IA escolhe os momentos e escreve título e legenda</th><td>sim</td><td>sim</td></tr>
-            <tr><th scope="row">Legenda palavra a palavra e crédito ao criador</th><td>sim</td><td>sim</td></tr>
+            <tr><th scope="row">Redes para postar (TikTok, Shorts, Reels)</th><td>1, você escolhe</td><td>as 3</td></tr>
+            <tr><th scope="row">Canais na lista fixa</th><td>até 2</td><td>sem limite</td></tr>
+            <tr><th scope="row">Lives gravando ao mesmo tempo</th><td>até 2</td><td>você define</td></tr>
+            <tr><th scope="row">Cortes por dia</th><td>3</td><td>sem limite</td></tr>
             <tr><th scope="row">Resolução do corte</th><td>1080×1920</td><td>até 4K</td></tr>
-            <tr><th scope="row">Grava lives sozinho (Twitch, YouTube, Kick)</th><td class="nao">não</td><td>sim</td></tr>
-            <tr><th scope="row">Usa o chat para achar os picos</th><td class="nao">não</td><td>sim</td></tr>
-            <tr><th scope="row">Publica no TikTok, Shorts e Reels</th><td class="nao">não</td><td>sim</td></tr>
-            <tr><th scope="row">Agenda, pausa por rede, métricas e análise</th><td class="nao">não</td><td>sim</td></tr>
-            <tr><th scope="row">Código aberto</th><td>sim (MIT)</td><td class="nao">não</td></tr>
+            <tr><th scope="row">Marca “feito com CortaLive” no vídeo</th><td>sempre</td><td class="nao">não tem</td></tr>
+            <tr><th scope="row">Procura sozinho lives de um jogo (YouTube e Twitch)</th><td class="nao">não</td><td>sim</td></tr>
+            <tr><th scope="row">Cortar vídeo por link ou do PC (VOD, podcast, entrevista)</th><td>sim, dentro dos 3 cortes/dia</td><td>sim</td></tr>
+            <tr><th scope="row">Sua logo no vídeo</th><td>sim</td><td>sim</td></tr>
+            <tr><th scope="row">IA, legenda palavra a palavra e crédito ao criador</th><td>sim</td><td>sim</td></tr>
             <tr><th scope="row">Preço</th><td>grátis</td><td><span data-cupom><span data-preco-cupom>R$ 147</span> c/ cupom</span><span data-sem-cupom data-preco>R$ 297</span></td></tr>
           </tbody>
         </table>
       </div>
-      <p style="margin-top:20px"><a data-link="download" href="https://github.com/SrSatriano/CortaLive-Basico/releases/latest" rel="noopener">Baixar o Básico no GitHub</a></p>
+      <div class="acoes">
+        <a class="botao" data-link="compra" href="#preco">Comprar o CortaLive Pro</a>
+        <a class="botao botao--leve" data-link="instalador" href="https://github.com/SrSatriano/CortaLive-Pro/releases/latest/download/CortaLive-Pro-Setup.exe" rel="noopener">Baixar grátis</a>
+      </div>
+      <p class="nota-baixar">Windows 10 ou 11, 64 bits. Na primeira vez, o Windows pode mostrar um aviso azul; o <a data-link="instalar" href="instalar-pro.html">passo a passo da instalação</a> mostra o que clicar.</p>
     </div>
   </section>
 
@@ -539,12 +561,13 @@
       <div>
         <ul class="inclui">
           <li><strong>Licença vitalícia</strong>Para até 2 PCs. Sem mensalidade.</li>
-          <li><strong>Ativação automática</strong>Você digita o <span class="nw">e-mail</span> da compra e o código que chega no <span class="nw">e-mail</span> da Cakto. O programa ativa sozinho.</li>
+          <li><strong>Ativação automática</strong>Você digita o <span class="nw">e-mail</span> da compra e o código que chega no <span class="nw">e-mail</span> da Cakto. O programa ativa sozinho. Se já usa o modo grátis, ele vira Pro ali mesmo, sem reinstalar.</li>
+          <li><strong>Atualização pelo painel</strong>Quando sai versão nova, o painel avisa e instala com um clique.</li>
           <li><strong>Reembolso em 7 dias</strong>Pelo Código de Defesa do Consumidor. É só pedir pela Cakto.</li>
         </ul>
         <ol class="passos-compra" aria-label="Depois da compra">
           <li><span>Compre pelo botão e guarde o <span class="nw">e-mail</span> de confirmação.</span></li>
-          <li><span>Siga o <a data-link="instalar" href="instalar-pro.html">guia de instalação e ativação</a>: baixar, instalar, ativar.</span></li>
+          <li><span>Siga o <a data-link="instalar" href="instalar-pro.html">guia de instalação e ativação</a>. Se o programa já está instalado, pule direto para a ativação.</span></li>
           <li><span>No painel, siga os primeiros passos: escolher a IA (se quiser), os canais e conectar as suas contas.</span></li>
         </ol>
       </div>
@@ -560,6 +583,14 @@
         <p>Inclusive as que não ajudam a vender.</p>
       </div>
       <div>
+        <details>
+          <summary>Dá para testar antes de comprar?</summary>
+          <div><p>Dá. Baixe o instalador e use no modo grátis, sem cadastro: 1 rede, até 2 canais, 3 cortes por dia, em 1080p e com a marca “feito com CortaLive” no vídeo. É pouco para tocar um canal, mas suficiente para ver se o programa serve para você.</p><p>E se comprar o Pro e não gostar, você tem 7 dias para pedir reembolso, pelo Código de Defesa do Consumidor. O pedido é feito pela Cakto.</p></div>
+        </details>
+        <details>
+          <summary>Comecei no grátis. Para virar Pro, preciso reinstalar?</summary>
+          <div><p>Não. Depois da compra, abra a tela Ativação no painel, digite o <span class="nw">e-mail</span> e o código da compra e clique em Ativar agora. Os limites somem na hora, e os canais, cortes e configurações que você já tinha continuam lá.</p></div>
+        </details>
         <details>
           <summary>Funciona sem chave de IA?</summary>
           <div><p>Funciona. Sem IA ele escolhe os trechos só pelos picos de áudio e de chat e usa títulos genéricos. Com uma chave (Gemini, Vertex, Claude ou OpenAI), a IA dá nota a cada trecho e escreve título, legenda e hashtags. A cobrança da IA é feita pelo provedor, na sua conta.</p></div>
@@ -578,11 +609,11 @@
         </details>
         <details>
           <summary>Em quantos computadores posso usar?</summary>
-          <div><p>A licença é vitalícia e vale para até 2 PCs. A ativação pede o <span class="nw">e-mail</span> e o código da compra.</p></div>
+          <div><p>A licença do Pro é vitalícia e vale para até 2 PCs. A ativação pede o <span class="nw">e-mail</span> e o código da compra.</p></div>
         </details>
         <details>
-          <summary>E se eu não gostar?</summary>
-          <div><p>Você tem 7 dias para pedir reembolso, pelo Código de Defesa do Consumidor. O pedido é feito pela Cakto.</p></div>
+          <summary>Como chegam as atualizações?</summary>
+          <div><p>O programa confere de tempos em tempos se saiu versão nova. Quando sai, aparece um aviso no painel com o botão “Atualizar agora”. Ele baixa, confere se o arquivo é mesmo meu e não foi alterado, fecha, instala e abre de novo. As gravações em andamento param nessa hora, então escolha um momento sem live importante.</p></div>
         </details>
         <details data-cupom>
           <summary>Abri o link e o cupom não apareceu.</summary>
@@ -599,7 +630,27 @@
   <section class="secao fim" aria-labelledby="t-fim">
     <div class="caixa">
       <h2 id="t-fim">Ainda na dúvida? Olha o Afiado Games: é o CortaLive Pro postando.</h2>
-      <a class="botao" data-link="compra" href="#preco">Comprar o CortaLive Pro</a>
+      <div class="acoes">
+        <a class="botao" data-link="compra" href="#preco">Comprar o CortaLive Pro</a>
+        <a class="botao botao--leve" data-link="instalador" href="https://github.com/SrSatriano/CortaLive-Pro/releases/latest/download/CortaLive-Pro-Setup.exe" rel="noopener">Baixar grátis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================== para quem programa -->
+  <section class="dev" id="para-quem-programa" aria-labelledby="t-dev">
+    <div class="caixa">
+      <div>
+        <span class="rotulo">Para quem programa</span>
+        <h2 id="t-dev">O CortaLive Básico continua aberto</h2>
+      </div>
+      <div>
+        <p>Antes do Pro veio o Básico, e ele continua no GitHub com código aberto (MIT). É outro programa, bem mais simples, escrito em Python: corta um vídeo que você já gravou, com IA e legenda, mas não grava live nem posta. Serve para quem quer mexer no código ou entender como os cortes são feitos.</p>
+        <p class="links-dev">
+          <a data-link="repositorio" href="https://github.com/SrSatriano/CortaLive-Basico" rel="noopener">Ver o código no GitHub</a>
+          <a data-link="download" href="https://github.com/SrSatriano/CortaLive-Basico/releases/latest" rel="noopener">Baixar o Básico</a>
+        </p>
+      </div>
     </div>
   </section>
 </main>
@@ -608,7 +659,7 @@
   <div class="caixa">
     <nav aria-label="Links do rodapé">
       <a data-link="instalar" href="instalar-pro.html">Instalar e ativar o Pro</a>
-      <a data-link="download" href="https://github.com/SrSatriano/CortaLive-Basico/releases/latest" rel="noopener">Versão grátis (Básico)</a>
+      <a data-link="instalador" href="https://github.com/SrSatriano/CortaLive-Pro/releases/latest/download/CortaLive-Pro-Setup.exe" rel="noopener">Baixar grátis</a>
       <a data-link="repositorio" href="https://github.com/SrSatriano/CortaLive-Basico" rel="noopener">Código do Básico</a>
       <a href="https://www.tiktok.com/@afiado.games" rel="noopener">Afiado Games no TikTok</a>
       <a href="https://www.youtube.com/@AfiadoGames" rel="noopener">no YouTube</a>
@@ -626,6 +677,7 @@
     }
     aplicar('[data-link="compra"]', "href", LINK_COMPRA);
     aplicar('[data-link="instalar"]', "href", LINK_INSTALAR);
+    aplicar('[data-link="instalador"]', "href", LINK_INSTALADOR);
     aplicar('[data-link="download"]', "href", LINK_DOWNLOAD);
     aplicar('[data-link="repositorio"]', "href", LINK_REPOSITORIO);
     aplicar("[data-preco]", "textContent", PRECO);

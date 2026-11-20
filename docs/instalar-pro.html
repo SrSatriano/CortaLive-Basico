@@ -32,6 +32,9 @@
   .botao:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--tinta); }
   .botao.leve { background: transparent; }
   .aviso { border-bottom: 2px solid var(--tinta); }
+  .gratis { border-left: 4px solid var(--marca); background: #fffdf7; padding: 12px 16px; margin: 6px 0 16px; }
+  .gratis p { margin: 0; }
+  .nw { white-space: nowrap; }
   footer { color: var(--tinta-2); font-size: .92rem; margin-top: 32px; }
   a { color: inherit; text-underline-offset: 3px; }
   :focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; box-shadow: 0 0 0 7px var(--marca); }
@@ -40,33 +43,38 @@
 <body>
 <main>
   <a class="topo" href="./"><img src="assets/logo.svg" alt="" width="34" height="34"><span>CortaLive <span>Pro</span></span></a>
-  <h1>Obrigado pela compra! <mark>Vamos instalar.</mark></h1>
-  <p class="sub">São 3 passos e leva poucos minutos. Guarde o e-mail da compra: ele tem o código que você vai usar na ativação.</p>
+  <h1>Instalar o CortaLive. <mark>São 3 passos.</mark></h1>
+  <p class="sub">Comprou o Pro? Obrigado! Guarde o <span class="nw">e-mail</span> da compra: ele tem o código que você vai usar no passo 3. Ainda não comprou? Os passos 1 e 2 já bastam: o programa funciona no modo grátis.</p>
 
   <section class="passo">
     <h2><b>1</b>Baixe o instalador</h2>
-    <p>Windows 10 ou 11 (64 bits). O arquivo tem cerca de 150 MB.</p>
-    <a class="botao" href="https://github.com/SrSatriano/CortaLive-Pro/releases/latest/download/CortaLive-Pro-Setup.exe">Baixar o CortaLive Pro</a>
+    <p>Windows 10 ou 11 (64 bits). O arquivo tem cerca de 150 MB e é o mesmo para o grátis e para o Pro.</p>
+    <a class="botao" href="https://github.com/SrSatriano/CortaLive-Pro/releases/latest/download/CortaLive-Pro-Setup.exe">Baixar o instalador</a>
   </section>
 
   <section class="passo">
     <h2><b>2</b>Instale</h2>
     <ul>
       <li>Abra o arquivo baixado. Se o Windows mostrar <b>"O Windows protegeu o computador"</b>, clique em <b>Mais informações → Executar assim mesmo</b> (acontece com programas novos).</li>
-      <li>Deixe marcadas as opções <b>Ligar junto com o Windows</b> e <b>Instalar o FFmpeg</b>.</li>
+      <li>O instalador pergunta para quem instalar: <b>Para todos os usuários</b> (em Arquivos de Programas; o Windows pede permissão, e cada atualização também) ou <b>Só para mim</b> (sem pedir permissão). Os dois funcionam igual.</li>
+      <li>Deixe marcadas as opções <b>Ligar junto com o Windows</b>, <b>Instalar o FFmpeg</b> e <b>Instalar o Deno</b> (o YouTube exige o Deno para baixar vídeos e gravar lives).</li>
       <li>No final, deixe marcado <b>Abrir o CortaLive Pro agora</b>.</li>
     </ul>
+    <div class="gratis">
+      <p>Pronto: ele já funciona no <b>modo grátis</b>. Posta em 1 rede (você escolhe qual), acompanha até 2 canais, grava até 2 lives ao mesmo tempo e faz 3 cortes por dia, em até 1080×1920, com a marca <b>"feito com CortaLive"</b> no vídeo. A busca automática de lives por jogo é só do Pro.</p>
+    </div>
+    <p>Siga o checklist <b>Primeiros passos</b> do painel: escolher a IA (se quiser), os canais e conectar suas contas.</p>
   </section>
 
   <section class="passo">
-    <h2><b>3</b>Ative</h2>
-    <p>Na tela <b>Ativação</b>, digite o <b>e-mail usado na compra</b> e o <b>código da compra</b> (está no e-mail de confirmação da Cakto) e clique em <b>Ativar agora</b>. A licença vale para até 2 computadores.</p>
-    <p>Depois siga o checklist <b>Primeiros passos</b> do painel: escolher a IA, os canais e conectar suas contas.</p>
+    <h2><b>3</b>Ative o Pro</h2>
+    <p>É este passo que tira os limites. Na tela <b>Ativação</b> do painel, digite o <b><span class="nw">e-mail</span> usado na compra</b> e o <b>código da compra</b> (está no <span class="nw">e-mail</span> de confirmação da Cakto) e clique em <b>Ativar agora</b>. Ele vira Pro na hora, sem reinstalar, e o que você já configurou continua lá. A licença vale para até 2 computadores.</p>
+    <p>Ainda não comprou? <a href="./#preco">Veja o preço do Pro</a>.</p>
   </section>
 
   <section class="passo aviso">
     <h2>Precisa de ajuda?</h2>
-    <p>O manual completo está dentro do programa (aba <b>Ajuda</b>). Para suporte, responda ao e-mail da compra.</p>
+    <p>O manual completo está dentro do programa (aba <b>Ajuda</b>). Quando sair versão nova, o painel avisa e o botão <b>Atualizar agora</b> instala sozinho. Para suporte, responda ao <span class="nw">e-mail</span> da compra.</p>
     <a class="botao leve" href="./">Voltar para a página do CortaLive</a>
   </section>
 
