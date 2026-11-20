@@ -269,6 +269,15 @@
   .fim h2 { max-width: 20ch; margin: 0; font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
   .fim .acoes { margin-top: 0; }
 
+  /* tutorial em vídeo: capa que abre o YouTube (sem iframe: a CSP da página não carrega nada de fora) */
+  .tutorial { padding-top: 0; }
+  .tutorial .capa-video { display: block; max-width: 880px; margin: 22px auto 0; position: relative; }
+  .tutorial .capa-video img { width: 100%; height: auto; border: 2px solid var(--tinta); box-shadow: 8px 8px 0 var(--tinta); }
+  .tutorial .capa-video:hover img, .tutorial .capa-video:focus-visible img { transform: translate(-2px, -2px); box-shadow: 10px 10px 0 var(--tinta); }
+  .tutorial .nota-video { text-align: center; margin-top: 14px; font-size: .95rem; color: var(--tinta-2); }
+  .prova .outro { margin-top: 22px; padding-top: 16px; border-top: 2px dashed var(--linha); }
+  .prova .outro h4 { margin: 0 0 6px; font: 700 1.05rem/1.25 var(--f-titulo); }
+
   /* para quem programa */
   .dev { border-top: 2px solid var(--tinta); background: var(--papel-2); padding: 56px 0; }
   .dev .caixa { display: grid; gap: 8px 48px; }
@@ -375,7 +384,7 @@
           <p>Então escrevi um programa pra fazer isso por mim. Ele acompanha as lives, grava, separa os trechos em que o áudio e o chat explodem, transcreve, corta e publica. Desde 18/11/2026 os cortes do Afiado Games saem sozinhos, do meu PC, pelo mesmo motor que virou o CortaLive Pro.</p>
           <p>Não tenho números pra te mostrar ainda: o sistema começou a postar lá agora. Mas ele está rodando de verdade, em público, e você pode conferir antes de pagar qualquer coisa. O motor que estou vendendo é esse mesmo: o CortaLive Pro é ele empacotado para qualquer pessoa instalar e usar.</p>
           <p>E não precisa comprar para experimentar: o mesmo programa roda de graça, com limites. Se gostar, você ativa o Pro.</p>
-          <p class="assinatura">— SrSatriano, dono do Afiado Games e quem escreveu o CortaLive</p>
+          <p class="assinatura">— SrSatriano, dono do Afiado Games e do Mente Afiada Cut, e quem escreveu o CortaLive</p>
         </div>
       </div>
 
@@ -387,6 +396,14 @@
           <li><a href="https://www.youtube.com/@AfiadoGames" rel="noopener" target="_blank">YouTube Shorts <span>@AfiadoGames ↗</span></a></li>
           <li><a href="https://www.instagram.com/afiadogames/" rel="noopener" target="_blank">Instagram Reels <span>@afiadogames ↗</span></a></li>
         </ul>
+        <div class="outro">
+          <h4>E também cortes de debates e podcasts</h4>
+          <p>O Mente Afiada Cut é meu outro canal, de cortes de debates e podcasts, feito pelo meu editor de podcasts. As funções dele (câmera que segue quem está falando, cortes nos silêncios e comentário final narrado) estão chegando ao CortaLive.</p>
+          <ul>
+            <li><a href="https://www.tiktok.com/@menteafiadacut" rel="noopener" target="_blank">TikTok <span>@menteafiadacut ↗</span></a></li>
+            <li><a href="https://www.youtube.com/channel/UCzWTzPSt3h9-Qd-Ga4jUHEw" rel="noopener" target="_blank">YouTube <span>Mente Afiada Cut ↗</span></a></li>
+          </ul>
+        </div>
       </aside>
     </div>
   </section>
@@ -466,6 +483,19 @@
           </figure>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <!-- =========================================================== tutorial em vídeo -->
+  <section class="secao tutorial" id="tutorial" aria-labelledby="t-tutorial">
+    <div class="caixa">
+      <span class="rotulo">Passo a passo em vídeo</span>
+      <h2 id="t-tutorial">Veja em 6 minutos, do download ao primeiro corte publicado</h2>
+      <p>Instalação, IA, contas, canais, cortes, cortar por link, agenda, pausas e ativação, com o programa de verdade e dados de demonstração.</p>
+      <a class="capa-video" href="https://youtu.be/xkJ_aKpcGFs" target="_blank" rel="noopener" aria-label="Assistir ao tutorial completo do CortaLive Pro no YouTube (abre em nova aba)">
+        <img src="assets/tutorial-capa.webp" srcset="assets/tutorial-capa-640.webp 640w, assets/tutorial-capa.webp 1280w" sizes="(min-width: 960px) 880px, 100vw" width="1280" height="720" loading="lazy" alt="Capa do tutorial completo do CortaLive Pro, com botão de play">
+      </a>
+      <p class="nota-video">Abre no YouTube. Tem capítulos na descrição para pular direto para cada passo.</p>
     </div>
   </section>
 
